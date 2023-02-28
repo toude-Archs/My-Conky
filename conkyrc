@@ -1,0 +1,97 @@
+background yes
+use_xft yes
+xftfont Sans:size=10
+xftalpha 1
+update_interval 1.0
+total_run_times 0
+own_window_argb_visual yes
+own_window_argb_value 50
+own_window_class Conky
+own_window yes
+own_window_transparent yes
+own_window_type normal
+own_window_hints undecorated,below,sticky,skip_taskbar,skip_pager
+double_buffer yes
+minimum_size 200 100
+maximum_width 1300
+text_buffer_size 2000
+draw_shades no
+draw_outline no
+draw_borders no
+draw_graph_borders no
+default_color white
+default_outline_color white
+alignment top_left
+gap_x 10
+gap_y 10
+no_buffers yes
+uppercase no
+cpu_avg_samples 2
+override_utf8_locale yes
+#
+color0 white
+#
+color1 white
+#
+color2 orange
+#
+color3 white
+#
+color4 orange
+#
+color5 white
+#cornflowerblue
+# Lua Load #
+#lua_load ~/.conky/ring.lua
+#lua_draw_hook_pre clock_rings
+
+TEXT
+#${color3}______________________________________
+${color3} SYSTEM :
+${color3} .. .. .. .. .. .. ..
+${color0}OS : ${color2}${exec lsb_release -d | cut -f2 }
+${color0}Uptime:${color2} $uptime ${color3} | ${color0}Load average:${color2} $loadavg
+${color0}Kernel: ${color2}${exec uname -r} ${color3} | ${color0}Arch : ${color2}$machine
+
+${color3} CPU :
+${color3} .. .. .. .. .. .. ..
+${color0}CPU : ${color2}AMD Athlon Silver 3050U
+${color0}Clock frequency :${color2} ${freq_g} GHz
+${color5}Core 1:${color2} ${cpu cpu0}%${goto 110}${color2}${cpubar cpu0 6,60}${color2}${goto 190}${exec expr `sensors | grep 'Core 1' | cut -d+ -f2 | cut -d\( -f1 | cut -d. -f1`}°C
+${color5}Core 2:${color2} ${cpu cpu1}%${goto 110}${color2}${cpubar cpu1 6,60}${color2}${goto 190}${exec expr `sensors | grep 'Core 2' | cut -d+ -f2 | cut -d\( -f1 | cut -d. -f1`}°C
+#${color5}Core 3:${color 3399FF} ${cpu cpu2}%${goto 110}${color 3399FF}${cpubar cpu2 6,60}${color 3399FF}${goto 190}${exec expr `sensors | grep 'Core 3' | cut -d+ -f2 | cut -d\( -f1 | cut -d. -f1`}°C
+#${color5}Core 4:${color 3399FF} ${cpu cpu3}%${goto 110}${color 3399FF}${cpubar cpu3 6,60}${color 3399FF}${goto 190}${exec expr `sensors | grep 'Core 4' | cut -d+ -f2 | cut -d\( -f1 | cut -d. -f1`}°C
+#${color5}Core 5:${color 3399FF} ${cpu cpu4}%${goto 110}${color 3399FF}${cpubar cpu4 6,60}${color 3399FF}${goto 190}${exec expr `sensors | grep 'Core 5' | cut -d+ -f2 | cut -d\( -f1 | cut -d. -f1`}°C
+#${color5}Core 6:${color 3399FF} ${cpu cpu5}%${goto 110}${color 3399FF}${cpubar cpu5 6,60}${color 3399FF}${goto 190}${exec expr `sensors | grep 'Core 6' | cut -d+ -f2 | cut -d\( -f1 | cut -d. -f1`}°C
+#${color5}Core 7:${color 3399FF} ${cpu cpu6}%${goto 110}${color 3399FF}${cpubar cpu6 6,60}${color 3399FF}${goto 190}${exec expr `sensors | grep 'Core 7' | cut -d+ -f2 | cut -d\( -f1 | cut -d. -f1`}°C
+#${color5}Core 8:${color 3399FF} ${cpu cpu7}%${goto 110}${color 3399FF}${cpubar cpu7 6,60}${color 3399FF}${goto 190}${exec expr `sensors | grep 'Core 8' | cut -d+ -f2 | cut -d\( -f1 | cut -d. -f1`}°C
+#${color5}Core 9:${color 3399FF} ${cpu cpu8}%${goto 110}${color 3399FF}${cpubar cpu8 6,60}${color 3399FF}${goto 190}${exec expr `sensors | grep 'Core 9' | cut -d+ -f2 | cut -d\( -f1 | cut -d. -f1`}°C
+#${color5}Core 10:${color 3399FF} ${cpu cpu9}%${goto 110}${color 3399FF}${cpubar cpu9 6,60}${color 3399FF}${goto 190}${exec expr `sensors | grep 'Core 10' | cut -d+ -f2 | cut -d\( -f1 | cut -d. -f1`}°C
+#${color5}Core 11:${color 3399FF} ${cpu cpu10}%${goto 110}${color 3399FF}${cpubar cpu10 6,60}${color 3399FF}${goto 190}${exec expr `sensors | grep 'Core 11' | cut -d+ -f2 | cut -d\( -f1 | cut -d. -f1`}°C
+#${color5}Core 12:${color 3399FF} ${cpu cpu11}%${goto 110}${color 3399FF}${cpubar cpu11 6,60}${color 3399FF}${goto 190}${exec expr `sensors | grep 'Core 12' | cut -d+ -f2 | cut -d\( -f1 | cut -d. -f1`}°C
+#${color5}Core 13:${color 3399FF} ${cpu cpu12}%${goto 110}${color 3399FF}${cpubar cpu12 6,60}${color 3399FF}${goto 190}${exec expr `sensors | grep 'Core 13' | cut -d+ -f2 | cut -d\( -f1 | cut -d. -f1`}°C
+#${color5}Core 14:${color 3399FF} ${cpu cpu13}%${goto 110}${color 3399FF}${cpubar cpu13 6,60}${color 3399FF}${goto 190}${exec expr `sensors | grep 'Core 14' | cut -d+ -f2 | cut -d\( -f1 | cut -d. -f1`}°C
+#${color5}Core 15:${color 3399FF} ${cpu cpu14}%${goto 110}${color 3399FF}${cpubar cpu14 6,60}${color 3399FF}${goto 190}${exec expr `sensors | grep 'Core 15' | cut -d+ -f2 | cut -d\( -f1 | cut -d. -f1`}°C
+#${color5}Core 16:${color 3399FF} ${cpu cpu15}%${goto 110}${color 3399FF}${cpubar cpu15 6,60}${color 3399FF}${goto 190}${exec expr `sensors | grep 'Core 16' | cut -d+ -f2 | cut -d\( -f1 | cut -d. -f1`}°C
+
+${color3} STORAGE :
+${color3} .. .. .. .. .. .. ..
+${color5}RAM:${color2} $mem ${goto 110}${color2}  ${membar 6,60}${color2}${goto 190}$memmax
+${color5}SWAP:${color2} $swap ${goto 110}${color2}  ${swapbar 6,60}${color2}${goto 190}$swapmax
+${color5}Root: ${color2}${fs_used /} / ${fs_size /} (${fs_used_perc /}%)
+${color5}/boot: ${color2}${fs_used /boot} / ${fs_size /boot} (${fs_used_perc /boot}%)
+${color5}/home: ${color2}${fs_used /home} / ${fs_size /home} (${fs_used_perc /home}%)
+
+#${color3}______________________________________
+
+${color3}EPHEMERIDE :
+${color3} .. .. .. .. .. .. ..
+${color3}Nous sommes le ${color2}${texeci 1000 date "+%A %d %B %Y" }
+${color3}Heure : ${color2}${time %H:%M:%S}
+
+${color3}NETWORK :
+${color3} .. .. .. .. .. .. ..
+${color3}IP: ${color2}${addr wlan0} ${goto 250}
+${color3}DL:${color2} ${downspeedf wlan0}k/s ${color3}|  ${color3}UP:${color2} ${upspeedf wlan0}k/s
+${color3}Public IP: ${color2}${texeci 1000 wget http://checkip.dyndns.org -O - -o /dev/null | cut -d : -f 2 | cut -d \< -f 1}
+${color3}Windows Server IP: ${color2}192.168.1.127
